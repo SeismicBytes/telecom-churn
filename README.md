@@ -1,72 +1,22 @@
 # telecom-churn
-Business problem overview
- 
+# Business Problem Overview
 
-In the telecom industry, customers are able to choose from multiple service providers and actively switch from one operator to another. In this highly competitive market, the telecommunications industry experiences an average of 15-25% annual churn rate. Given the fact that it costs 5-10 times more to acquire a new customer than to retain an existing one, customer retention has now become even more important than customer acquisition.
+In the highly competitive telecom industry, customer retention is a significant challenge due to the ease with which customers can switch between multiple service providers. The industry sees an annual churn rate of 15-25%, and with the cost of acquiring new customers being 5-10 times more than retaining existing ones, focusing on customer retention has become crucial, especially for incumbent operators aiming to retain high-value customers.
 
- 
+To combat customer churn, telecom companies need to predict which customers are at high risk of churn and identify the main indicators contributing to it. This project involves analyzing customer-level data from a leading telecom firm to build predictive models for this purpose.
 
-For many incumbent operators, retaining high profitable customers is the number one business goal.
+## Understanding and Defining Churn
 
- 
+Churn prediction varies significantly between the two main payment models in the telecom industry: postpaid (monthly/annual billing after service usage) and prepaid (advance payment for services). In postpaid, churn is more straightforward as customers usually inform the operator when switching. However, in prepaid, which is prevalent in India and Southeast Asia, churn prediction is challenging as customers can stop using services without notice, making it difficult to distinguish between temporary non-usage and actual churn.
 
-To reduce customer churn, telecom companies need to predict which customers are at high risk of churn.
+### Definitions of Churn
 
- 
+Churn can be defined in several ways:
 
-In this project, you will analyse customer-level data of a leading telecom firm, build predictive models to identify customers at high risk of churn and identify the main indicators of churn.
+- **Revenue-based churn**: Identifying customers who have not used any revenue-generating services like mobile internet, outgoing calls, or SMS over a certain period. This could be measured through metrics like monthly revenue generation below a specific threshold.
 
- 
+- **Usage-based churn**: Focusing on customers with no activity, whether incoming or outgoing, over a defined period. This project will utilize the usage-based definition to define churn.
 
-Understanding and defining churn
-There are two main models of payment in the telecom industry - postpaid (customers pay a monthly/annual bill after using the services) and prepaid (customers pay/recharge with a certain amount in advance and then use the services).
+### High-Value Churn
 
- 
-
-In the postpaid model, when customers want to switch to another operator, they usually inform the existing operator to terminate the services, and you directly know that this is an instance of churn.
-
- 
-
-However, in the prepaid model, customers who want to switch to another network can simply stop using the services without any notice, and it is hard to know whether someone has actually churned or is simply not using the services temporarily (e.g. someone may be on a trip abroad for a month or two and then intend to resume using the services again).
-
- 
-
-Thus, churn prediction is usually more critical (and non-trivial) for prepaid customers, and the term ‘churn’ should be defined carefully.  Also, prepaid is the most common model in India and Southeast Asia, while postpaid is more common in Europe in North America.
-
- 
-
-This project is based on the Indian and Southeast Asian market.
-
- 
-
-Definitions of churn
-There are various ways to define churn, such as:
-
- 
-
-Revenue-based churn: Customers who have not utilised any revenue-generating facilities such as mobile internet, outgoing calls, SMS etc. over a given period of time. One could also use aggregate metrics such as ‘customers who have generated less than INR 4 per month in total/average/median revenue.
-
- 
-
-The main shortcoming of this definition is that there are customers who only receive calls/SMSes from their wage-earning counterparts, i.e. they don’t generate revenue but use the services. For example, many users in rural areas only receive calls from their wage-earning siblings in urban areas.
-
- 
-
-Usage-based churn: Customers who have not done any usage, either incoming or outgoing - in terms of calls, internet etc. over a period of time.
-
- 
-
-A potential shortcoming of this definition is that when the customer has stopped using the services for a while, it may be too late to take any corrective actions to retain them. For e.g., if you define churn based on a ‘two-months zero usage’ period, predicting churn could be useless since by that time the customer would have already switched to another operator.
-
- 
-
-In this project, you will use the usage-based definition to define churn.
-
- 
-
-High-value churn
-In the Indian and Southeast Asian markets, approximately 80% of revenue comes from the top 20% of customers (called high-value customers). Thus, if we can reduce the churn of high-value customers, we will be able to reduce significant revenue leakage.
-
- 
-
-In this project, you will define high-value customers based on a certain metric (mentioned later below) and predict churn only on high-value customers.
+In markets like India and Southeast Asia, around 80% of revenue comes from the top 20% of customers, termed as high-value customers. Targeting the churn among these customers can significantly impact revenue retention. This project aims to identify and predict churn among these high-value customers using a specific metric to define them.
